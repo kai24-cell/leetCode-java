@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 public class node_program {
     public static void main(String[] args) {
@@ -18,6 +19,8 @@ class Node {
 }
 
 class Reverse {
+    Stack<Character> stack = new Stack<>();
+
     public void print_data() {
         Node head = null, current = null;
         Scanner scan = new Scanner(System.in);
@@ -35,7 +38,21 @@ class Reverse {
                 current = new_node;
             }
         }
-
+        reverse_change(head);
+        get_reverse_data();
         scan.close();
+    }
+
+    private void reverse_change(Node node) {
+        if (node != null) {
+            stack.push(node.data);
+            reverse_change(node.next);
+        }
+    }
+
+    private void get_reverse_data() {
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
     }
 }
