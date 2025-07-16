@@ -17,5 +17,10 @@ class Print_frecently {
         Scanner scan_data = new Scanner(System.in);
         String[] word = scan_data.nextLine().toLowerCase().split(" ");
         low_and_split_word = new ArrayList<>(Arrays.asList(word));
+        scan_data.close();
+    }
+
+    private void count_data() {
+
     }
 }
