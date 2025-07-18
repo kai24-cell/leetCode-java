@@ -1,12 +1,18 @@
-import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Arrays;
 
-public class word_count {
-    public static void main(String[] args) {
-        Print_frecently print = new Print_frecently();
-        print.get_and_print();
+public class word_counter {
+    Print_word sorting_num = new Print_word();
+    sorting_num.sort_num();
+}
+
+class Print_word extends Print_frecently {
+    public void sort_num(){
+        get_and_print();
+        @Override();
+        
     }
 }
 
