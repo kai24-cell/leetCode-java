@@ -2,17 +2,20 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Map;
 
 public class word_counter {
     Print_word sorting_num = new Print_word();
-    sorting_num.sort_num();
+    sorting_num.get_and_print();
 }
 
 class Print_word extends Print_frecently {
-    public void sort_num(){
-        get_and_print();
-        @Override();
-        
+    @Override
+    public void get_and_print() {
+        super.get_and_print();
+        Map<String,Integer> comparetar = new HashMap<>(low_and_split_empty);
+        comparetar.entrySet().stream().sorted()(Map.Entry.<String , Integer>comparingByValue(Comparator.reverseOrder())).for
     }
 }
 
