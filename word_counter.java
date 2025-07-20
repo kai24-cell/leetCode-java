@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.TreeMap;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
@@ -14,13 +15,13 @@ class Print_word extends Print_frecently {
     @Override
     public void get_and_print() {
         super.get_and_print();
-        Map<String,Integer> comparetar = new HashMap<>(low_and_split_empty);
-        comparetar.entrySet().stream().sorted()(Map.Entry.<String , Integer>comparingByValue(Comparator.reverseOrder())).for
+        low_and_split_empty = new TreeMap<>();
+
     }
 }
 
 class Print_frecently {
-    HashMap<String, Integer> low_and_split_empty = new HashMap<>();
+    Map<String, Integer> low_and_split_empty = new HashMap<>();
     ArrayList<String> low_and_split_word = new ArrayList<>();
 
     public void get_and_print() {
