@@ -15,10 +15,10 @@ class Print_word extends Print_frecently {
     @Override
     public void get_and_print() {
         super.get_and_print();
-        low_and_split_empty = new TreeMap<>();
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(low_and_split_empty.entrySet());
+        list.sort((a, b) -> b.getValue() - a.getValue());
 
     }
-}
 
 class Print_frecently {
     Map<String, Integer> low_and_split_empty = new HashMap<>();
