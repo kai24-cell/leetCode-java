@@ -7,13 +7,22 @@ import java.util.Map;
 public class attend_check {
     public static void main(String[] args) {
         List<String[]> data = List.of(
-                new String[] { "Alice", "2025-08-01 09:00" },
-                new String[] { "Bob", "2025-08-02 09:15" },
-                new String[] { "Alice", "2025-08-03 08:50" },
-                new String[] { "Bob", "2025-07-31 09:10" });
+                new String[] { "Alice", "2025-08-01 09:00", "1200" },
+                new String[] { "Bob", "2025-08-02 09:15", "500" },
+                new String[] { "Alice", "2025-08-03 08:50", "800" },
+                new String[] { "Bob", "2025-07-31 09:10", "2000" },
+                new String[] { "Charlie", "2025-08-02 10:00", "1500" });
         Date_last output = new Date_last();
         Map<String, LocalDateTime> get = output.return_lastdate(data);
         output.print_date(get);
+        Total_money money_sum = new Total_money();
+        Map<String, Integer> sum = money_sum.sum_money(data);
+    }
+}
+
+class Total_money {
+    public Map<String, Integer> sum_money(List<String[]> money) {
+
     }
 }
 
