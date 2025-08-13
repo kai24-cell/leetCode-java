@@ -21,8 +21,19 @@ public class attend_check {
 }
 
 class Total_money {
-    public Map<String, Integer> sum_money(List<String[]> money) {
+    int name = 0, figure = 2, sum_figure = 1;
 
+    public Map<String, Integer> sum_money(List<String[]> money) {
+        Map<String, Integer> total = new HashMap<>();
+        for (String[] box : money) {
+            Integer num = Integer.parseInt(box[figure]);
+            if (total.containsKey(box[name])) {
+                total.put(box[name], num + total.get(box[name]));// 初めての名前じゃないとき数字を足す
+            } else if (!total.containsKey(box[name])) {
+                total.put(box[name], num);// 初めての名前の時追加
+            }
+            return total;
+        }
     }
 }
 
