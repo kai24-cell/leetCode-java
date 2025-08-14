@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.time.LocalDateTime;
@@ -14,9 +15,10 @@ public class attend_check {
                 new String[] { "Charlie", "2025-08-02 10:00", "1500" });
         Date_last output = new Date_last();
         Map<String, LocalDateTime> get = output.return_lastdate(data);
-        output.print_date(get);
+        // output.print_date(get);
         Total_money money_sum = new Total_money();
         Map<String, Integer> sum = money_sum.sum_money(data);
+        money_sum.print_sort(sum, get);
     }
 }
 
@@ -32,7 +34,24 @@ class Total_money {
             } else if (!total.containsKey(box[name])) {
                 total.put(box[name], num);// 初めての名前の時追加
             }
-            return total;
+        }
+
+        return total;
+    }
+
+    public void print_sort(Map<String, Integer> box, Map<String, LocalDateTime> shop_day) {
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(box.entrySet());
+        list.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+        int i = 1;
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        for (Map.Entry<String, Integer> x : list) {
+            for (Map.Entry<String, LocalDateTime> y : shop_day.entrySet()) {
+                if (x.getKey().equals(y.getKey())) {
+                    System.out.println(
+                            i + "位: " + x.getKey() + " (合計" + x.getValue() + "円,最終購入" + y.getValue().format(fmt) + ")");
+                    i++;
+                }
+            }
         }
     }
 }
