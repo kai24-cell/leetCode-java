@@ -3,7 +3,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;;
+import java.time.format.DateTimeFormatter;
 
 public class utc_subject {
     public static void main(String[] args) {
