@@ -13,7 +13,9 @@ class Solutions {
         int sum = 0, output[];
         while (sum != target) {
             for (int i = 0; i <= num.length; i++) {
-
+                for (int j = 0; j <= num.length; j++) {
+                    sum = i + j;
+                }
             }
         }
         return output;
